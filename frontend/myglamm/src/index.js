@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { store } from './reducer/store';
+import theme from './theme'
 
+import { ColorModeScript } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+<Provider store={store}>
+  <ChakraProvider theme={theme}>
+  <BrowserRouter>
+  <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+  <App />
+  </BrowserRouter>
+  </ChakraProvider>
+</Provider>
+    
+
 );
 
 // If you want to start measuring performance in your app, pass a function
