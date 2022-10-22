@@ -8,7 +8,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import {carouselData} from "../pages/HomePagecss/homepageData"
+import {carouselData} from "../Pages/HomePagecss/homepageData"
 import {Link as RouteLink} from 'react-router-dom'
 
 
