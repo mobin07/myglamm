@@ -9,9 +9,9 @@ import {
   } from '@chakra-ui/react';
   
   const IMAGE =
-    'https://files.myglamm.com/site-images/400x400/Artboard-1-(1).jpg';
+    'https://files.myglamm.com/site-images/400x400/Game-over-Germs_2.jpg';
   
-  export default function HairCareCards() {
+  export default function SanitizerCareCards() {
     return (
       <Center py={12}>
         <Box
@@ -19,17 +19,17 @@ import {
           p={6}
           maxW={'220px'}
           w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
+          height={'280px'}
+          border='1px'
+          borderColor= 'gray.400'
           rounded={'lg'}
           pos={'relative'}
-          zIndex={1}
-          border='1px'
-          borderColor='gray.400'          >
+          zIndex={1}>
           <Box
             rounded={'lg'}
             mt={-12}
             pos={'relative'}
-            height={'130px'}
+            height={'160px'}
             _after={{
               transition: 'all .3s ease',
               content: '""',
@@ -37,19 +37,18 @@ import {
               h: 'full',
               pos: 'absolute',
               top: 5,
-              left: 0,
-              backgroundImage: `url(${IMAGE})`,
-              
+              left: 0,              
               zIndex: -1,
             }}
             _groupHover={{
               _after: {
-                filter: 'blur(20px)',
+                
               },
             }}>
             <Image
               rounded={'lg'}
-              height={230}
+              pt='30px'
+              height={180}
               width={282}
               objectFit={'contain'}
               src={IMAGE}
@@ -57,7 +56,7 @@ import {
           </Box>
           <Stack pt={10} align={'center'}>
             <Heading fontSize={'sm'} fontFamily={'body'} fontWeight={500}>
-            MyGlamm SUPERFOODS Onion...
+            Game Over germs
             </Heading>
             <Text color={'gray.600'} fontWeight={500} fontSize={'10px'} textTransform={'uppercase'}>
             For Hairfall control
