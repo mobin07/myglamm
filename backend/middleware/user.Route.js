@@ -17,14 +17,14 @@ userRoute.post("/post",async(req,res)=>{
 userRoute.get("/",async(req,res)=>{
     
 let {cetegory,limit,_id}=req.query
-
+console.log(cetegory)
     try{
         if(_id)
         {
-            let data=await userModel.findOne({cetegory:cetegory,_id:_id});
+            let data=await userModel.findOne({_id:_id});
          res.send(data)
         }else{
-            let data=await userModel.find({cetegory:cetegory}).limit(limit)
+            let data=await userModel.find({cetegory:{$regex:new RegExp(cetegory)}}).limit(limit)
             res.send(data)
         }
     }catch(err){
