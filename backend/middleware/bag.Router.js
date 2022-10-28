@@ -37,7 +37,16 @@ bagRoute.get("/bag",async(req,res)=>{
         
         })
 
-
+bagRoute.patch("/bag/update/:_id",async(req,res)=>{
+    const {_id}=req.params;
+    
+    try{
+        let data=await bagModel.findOneAndUpdate({_id:_id},req.body,{new:true})
+        res.send(data)
+    }catch(err){
+        console.log(err)
+    }
+})
 
 
     module.exports=bagRoute;
